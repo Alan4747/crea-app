@@ -1,0 +1,50 @@
+<div class="container mx-auto p-8">
+  <div class="mx-auto max-w-xs">
+    <div class="py-10 text-center">
+      <span class="text-4xl font-bold text-gray-600"
+        ><span class="text-blue-500">Crea</span>App</span>
+    </div>
+    <div class="bg-custGray rounded-md border border-gray-200">
+      <form class="px-6 py-8" *ngIf="form"  [formGroup]="form" (ngSubmit)="onSubmit()">
+          <div class="mb-3" >
+            <label class="text-sm text-gray-600" for="username"
+              >Username</label
+            >
+            <input
+              formControlName="username"
+              autofocus
+              class="border rounded-md w-full p-1 mt-2 px-2 form-control"
+              type="text"
+            />
+          </div>
+          <div class="mb-7">
+            <label class="text-sm text-gray-600" for="password">Password</label>
+            <input
+              class="border rounded-md w-full p-1 mt-2 px-2 form-control"
+              type="password"
+              formControlName="password"
+            />
+          </div>
+          <div class="flex">
+            <button
+              class="
+                bg-blue-700
+                rounded-md
+                hover:bg-blue-800
+                w-full
+                p-1.5
+                text-sm text-white
+                font-bold
+                tracking-wider
+              "
+            >
+              Login
+            </button>
+          </div>
+      </form>
+    </div>
+    <div class="border border-solid p-4 mt-4 rounded-lg text-center">
+      <span class="text-gray-800">Developed by <a href="https://github.com/Alan4747" target="_blank" class="text-blue-500 hover:underline">Alan4747</a></span>
+    </div>
+  </div>
+</div>

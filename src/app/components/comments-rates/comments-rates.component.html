@@ -1,0 +1,99 @@
+<div class="mx-auto max-w-screen-lg border border-solid rounded-lg p-5">
+  <h3 class="mb-4 text-2xl font-bold text-gray-900 text-center">
+    Comments And Rates
+  </h3>
+  <div class="space-y-4">
+    <div class="flex" *ngFor="let comment of comments">
+      <div
+        class="
+          flex-1
+          border
+          rounded-lg
+          px-4
+          py-2
+          sm:px-6 sm:py-4
+          leading-relaxed
+        "
+      >
+        <div class="flex items-center">
+          <ul class="rating-list" *ngFor="let star of stars">
+            <li [ngClass]="{ selected: star <= comment.rating }">
+              <svg
+                class="w-4 h-4"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+                ></path>
+              </svg>
+            </li>
+          </ul>
+          <div class="px-2">
+            <strong>Sarah</strong>
+            <span class="text-xs text-gray-400 px-1">3:34 PM</span>
+          </div>
+        </div>
+
+        <p class="text-sm">
+        {{comment.comment}}
+        </p>
+      </div>
+    </div>
+    <div class="text-center border border-solid rounded-lg py-2">
+      <span class="text-gray-500 font-bold">Add comment and give rate</span>
+      <div class="flex justify-center">
+        <ul class="rating-list" *ngFor="let star of stars">
+          <li [ngClass]="{ selected: star <= selectedValue }"
+          (click)="giveStar(star)">
+            <svg
+              class="w-7 h-7"
+              fill="currentColor"
+              viewBox="0 0 20 20"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"
+              ></path>
+            </svg>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="flex items-center">
+      <input
+        type="text"
+        placeholder="Add comment"
+        class="
+          block
+          w-full
+          p-2
+          text-gray-700
+          bg-gray-100
+          appearance-none
+          focus:outline-none focus:bg-gray-50 focus:shadow-inner
+          rounded-lg
+        "
+        [(ngModel)]="comment"
+      />
+      
+      <button
+        class="
+        bg-white
+          border-2 border-solid
+        border-blue-400 text-blue-400
+        hover:bg-blue-500 hover:text-white
+          font-bold
+          p-1
+          w-12
+          ml-2
+          rounded-md
+        "
+        (click)="addComment()"
+      >
+        Add
+      </button>
+    </div>
+  </div>
+</div>

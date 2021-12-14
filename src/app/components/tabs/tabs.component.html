@@ -1,0 +1,60 @@
+<div [ngSwitch]="switchCase">
+  <div
+    class="
+      mx-auto
+      max-w-screen-lg
+      border border-solid
+      rounded-lg
+      p-5
+      bg-gray-50
+      flex
+      justify-center
+      items-center
+    "
+  >
+    <button
+      (click)="switchBtn('features')"
+      class="
+        bg-white
+        border-2 border-gray-200 border-solid
+        hover:border-blue-400 hover:text-blue-400
+        font-bold
+        py-2
+        px-4
+        rounded
+        w-full
+      "
+    >
+      Product Features
+    </button>
+    <div
+      class="m-2 border border-gray-50 w-2 h-10 bg-gray-200 rounded-lg"
+    ></div>
+    <button
+      (click)="switchBtn('comments-and-rates')"
+      class="
+        bg-white
+        border-2 border-gray-200 border-solid
+        hover:border-blue-400 hover:text-blue-400
+        font-bold
+        py-2
+        px-4
+        rounded
+        w-full
+      "
+    >
+      Comments and Rates
+    </button>
+  </div>
+  <div class="py-2">
+    <div *ngSwitchCase="'features'">
+      <app-product-features></app-product-features>
+    </div>
+    <div *ngSwitchCase="'comments-and-rates'">
+      <app-comments-rates
+        [comments]="comments"
+        (addComments)="addComments.emit()"
+      ></app-comments-rates>
+    </div>
+  </div>
+</div>
