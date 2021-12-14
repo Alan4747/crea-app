@@ -2,6 +2,9 @@
     CreaApp
 </h1>
 
+### Note: This Project was made with the latest version of Angular framework.
+
+
 ## Preview
 
 <div align="center">
