@@ -28,5 +28,11 @@ export class AppComponent {
         this.loading = false;
       }
     });
+   this.closeAll();
+  }
+
+  closeAll() {
+    console.log =  () => {};
+    console.warn = () => {};
   }
 }
